@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Firefox;
 using TechTalk.SpecFlow;
 
-namespace CLC.Web.UiTests.StepDefinitions
+namespace Chinchilla
 {
     [Binding]
     public class WebBrowser

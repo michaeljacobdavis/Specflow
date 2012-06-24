@@ -126,13 +126,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Selenium\FindBy.cs" />
-    <Compile Include="StepDefinitions\Chinchilla.cs" />
-    <Compile Include="StepDefinitions\Field.cs" />
-    <Compile Include="StepDefinitions\Page.cs" />
-    <Compile Include="StepDefinitions\Query.cs" />
     <Compile Include="StepDefinitions\StepDefinitions.cs" />
-    <Compile Include="StepDefinitions\WebBrowser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -145,6 +139,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Chinchilla\Chinchilla.csproj">
+      <Project>{35c92772-0070-4a5c-8eb9-c7e49adfd5e6}</Project>
+      <Name>Chinchilla</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Specflow\Specflow.csproj">
       <Project>{CA8BFB52-5FB9-4F60-9B1F-AEE10CF22317}</Project>
       <Name>Specflow</Name>

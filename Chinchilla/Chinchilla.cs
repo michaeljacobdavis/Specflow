@@ -1,31 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Configuration;
-using System.Diagnostics;
+using Chinchilla.Selenium;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
-using Specflow.Tests.Selenium;
-using Specflow.Tests.StepDefinitions;
 
-
-namespace CLC.Web.UiTests.StepDefinitions
+namespace Chinchilla
 {
     public class Chinchilla
     {
-        private Uri _rootUrl { get { return new Uri(ConfigurationManager.AppSettings["RootUrl"]); } }
-        protected IWebDriver _browser
-        {
-            get { return WebBrowser.Current; }
-        }
+        private Uri _rootUrl;
+
+        private IWebDriver _browser;
+        public IWebDriver Browser { get { return _browser; } }
 
         private Page _page;
-
         public Page Page { get { return _page; } }
 
-        public Chinchilla()
+        public Chinchilla(string rootUrl) : this (WebBrowser.Current, rootUrl){}
+
+        public Chinchilla(IWebDriver browser, string rootUrl)
         {
+            _browser = browser;
+            _rootUrl = new Uri(rootUrl);
             _page = new Page(_browser);
         }
 
@@ -77,9 +73,9 @@ namespace CLC.Web.UiTests.StepDefinitions
 
         }
 
-        public void Select(string field, string value)
+        public void Select(string field, string option)
         {
-            new SelectElement(new Query(_browser, ElementType.Select).Results.First()).SelectByText(value);
+            new SelectElement(new Query(_browser, ElementType.Select).Results.First()).SelectByText(option);
         }
 
 
@@ -93,7 +89,7 @@ namespace CLC.Web.UiTests.StepDefinitions
         {
             get
             {
-                return new Uri(WebBrowser.Current.Url).AbsolutePath;
+                return new Uri(_browser.Url).AbsolutePath;
             }
         }
     }

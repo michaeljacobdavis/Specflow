@@ -1,5 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Specflow.Tests.StepDefinitions;
+﻿using System.Configuration;
+using Chinchilla;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -7,8 +8,10 @@ using TechTalk.SpecFlow.Assist;
 namespace CLC.Web.UiTests.StepDefinitions
 {
     [Binding]
-    public class StepDefinitions : Chinchilla
+    public class StepDefinitions : Chinchilla.Chinchilla
     {
+        public StepDefinitions() :base(ConfigurationManager.AppSettings["RootUrl"]){}
+
         #region Givens
 
         [Given(@"I'm on (.*)")]
@@ -40,6 +43,12 @@ namespace CLC.Web.UiTests.StepDefinitions
         public void WhenIFillInTheFieldWith(string field, string value)
         {
             FillIn(field, value);
+        }
+
+        [When(@"(?:I)? select (.*) from (.*)")]
+        public void WhenISelectFrom(string option, string field)
+        {
+            Select(field, option);
         }
 
         [When(@"(?:I)? fill in the following:")]

@@ -98,8 +98,10 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.When("I fill in the following:", ((string)(null)), table1);
 #line 15
- testRunner.And("I click on the Register button");
+ testRunner.And("I select Blah from Test");
 #line 16
+ testRunner.And("I click on the Register button");
+#line 17
  testRunner.Then("I should see \"The password and confirmation password do not match.\"");
 #line hidden
             this.ScenarioCleanup();
