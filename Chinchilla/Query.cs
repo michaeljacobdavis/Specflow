@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Chinchilla.Attributes;
+using Chinchilla.Extensions;
 using OpenQA.Selenium;
 
 namespace Chinchilla
@@ -17,7 +19,7 @@ namespace Chinchilla
         public Query(IWebDriver browser, ElementType selector, SelectorType locator = SelectorType.XPath, string text = null)
         {
             _browser = browser;
-            Selector = XPathName[selector];
+            Selector = selector.GetStringValue();
             Locator = locator;
             Text = text;
         }
@@ -66,16 +68,6 @@ namespace Chinchilla
             }
         }
 
-        private Dictionary<ElementType, string> XPathName = new Dictionary<ElementType, string>
-        {
-            {ElementType.Link, "//a"},
-            {ElementType.Button, "//button | //input"},
-            {ElementType.Input, "//input"},
-            {ElementType.Label, "//label"},
-            {ElementType.Select, "//select"},
-            {ElementType.Unknown, "//*"}
-        };
-
     }
     public enum SelectorType
     {
@@ -84,11 +76,19 @@ namespace Chinchilla
     }
     public enum ElementType
     {
+        [StringValue("//a")]
         Link,
+        [StringValue("//button | //input")]
         Button,
+        [StringValue("//input")]
         Input,
+        [StringValue("//label")]
         Label,
+        [StringValue("//select")]
         Select,
+        [StringValue("//a | //button | //input")]
+        LinkOrButton,
+        [StringValue("//*")]
         Unknown
     }
 

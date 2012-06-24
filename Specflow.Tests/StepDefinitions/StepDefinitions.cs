@@ -30,19 +30,19 @@ namespace CLC.Web.UiTests.StepDefinitions
         [When(@"(?:I)? click on (?:the)? (.*) link")]
         public void WhenIClickOnLink(string link)
         {
-            ClickLink(link);
+            ClickLink(text: link);
         }
 
         [When(@"(?:I)? click on (?:the)? (.*) button")]
         public void WhenIClickOnButton(string button)
         {
-            ClickButton(button);
+            ClickButton(text : button);
         }
 
         [When(@"(?:I)? fill in (?:the)? (.*) field with ""(.*)""")]
         public void WhenIFillInTheFieldWith(string field, string value)
         {
-            FillIn(field, value);
+            FillIn(value, labelText: field);
         }
 
         [When(@"(?:I)? select (.*) from (.*)")]
@@ -57,7 +57,7 @@ namespace CLC.Web.UiTests.StepDefinitions
             var fields = table.CreateSet<Field>();
             foreach(var field in fields)
             {
-                FillIn(field.Name, field.Value);
+                FillIn(field.Value, labelText: field.Name);
             }
         }
         #endregion

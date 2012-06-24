@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Chinchilla.Extensions;
 using Chinchilla.Selenium;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -26,33 +27,42 @@ namespace Chinchilla
         }
 
 
-        public void ClickLink(string text)
+        public void ClickLink(string selector = null, SelectorType type = SelectorType.Css, string text = null)
         {
-            var a = new Query(_browser, ElementType.Link, SelectorType.XPath, text: text).Results;
-             a.First().Click();
+            selector = selector ?? ElementType.Button.GetStringValue();
+            new Query(_browser, selector, SelectorType.XPath, text: text).Results.First().Click();
         }
 
-        public void ClickButton(string text)
+        public void ClickButton(string selector = null, SelectorType type = SelectorType.Css, string text = null)
         {
-            _browser.FindElement(FindBy.ButtonText(text)).Click();
+            selector = String.Format("{0}[@value={1}]", selector ?? ElementType.Button.GetStringValue(), text);
+            new Query(_browser, selector, SelectorType.XPath).Results.First().Click();
         }
 
-        public void ClickOn(string text)
+        public void ClickOn(string selector = null, SelectorType type = SelectorType.Css, string text = null)
         {
-            throw new NotImplementedException();
-
+            selector = selector ?? ElementType.LinkOrButton.GetStringValue();
+            new Query(_browser, selector, SelectorType.XPath, text: text).Results.First().Click();
         }
 
-        public void FillIn(string field, string value)
+        public void FillIn(string value, string selector = null, SelectorType type = SelectorType.Css, string labelText = null)
         {
-            var label = new Query(_browser, ElementType.Label, SelectorType.XPath, text: field).Results.First();
-            _browser.FindElement(By.Id(label.GetAttribute("for"))).SendKeys(value);
+            IWebElement element;
+            if(selector == null)
+            {
+                var label = new Query(_browser, ElementType.Label, SelectorType.XPath, text: labelText).Results.First();
+                element = _browser.FindElement(By.Id(label.GetAttribute("for")));
+            }
+            else
+            {
+                element = new Query(_browser, selector, SelectorType.XPath).Results.First();
+            }
+            element.SendKeys(value);
         }
 
         public void Check(string text)
         {
             throw new NotImplementedException();
-
         }
 
         public void Choose(string text)
