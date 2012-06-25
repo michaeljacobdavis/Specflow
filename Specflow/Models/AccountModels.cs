@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Web.Mvc;
 using System.Web.Security;
 
 namespace Specflow.Models
@@ -26,7 +27,7 @@ namespace Specflow.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class LoginModel
+    public class LogOnModel
     {
         [Required]
         [Display(Name = "User name")]

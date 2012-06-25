@@ -1,0 +1,7 @@
+C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\bin\Specflow.dll
+C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\bin\Specflow.pdb
+C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\bin\EntityFramework.dll
+C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\bin\EntityFramework.xml
+C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\obj\Debug\Specflow.dll
+C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\obj\Debug\Specflow.pdb

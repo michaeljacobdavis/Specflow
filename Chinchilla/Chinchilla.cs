@@ -20,8 +20,6 @@ namespace MJD
         private Page _page;
         public Page Page { get { return _page; } }
 
-        public Chinchilla(string rootUrl) : this(WebBrowser.Current, rootUrl) { }
-
         public Chinchilla(IWebDriver browser, string rootUrl)
         {
             _browser = browser;

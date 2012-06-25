@@ -6,5 +6,5 @@
 
 Scenario: New User Registers
 	Given I'm on /
-	When I click on the Register link
+	When I click on the Log On link
 

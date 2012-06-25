@@ -3,39 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 using System.Web.Security;
 using Specflow.Models;
 
 namespace Specflow.Controllers
 {
-
-    [Authorize]
     public class AccountController : Controller
     {
 
         //
-        // GET: /Account/Login
+        // GET: /Account/LogOn
 
-        [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult LogOn()
         {
-            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         //
-        // POST: /Account/Login
+        // POST: /Account/LogOn
 
-        [AllowAnonymous]
         [HttpPost]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
                 if (Membership.ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    if (Url.IsLocalUrl(returnUrl))
+                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
                     {
                         return Redirect(returnUrl);
                     }
@@ -67,7 +64,6 @@ namespace Specflow.Controllers
         //
         // GET: /Account/Register
 
-        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -76,7 +72,6 @@ namespace Specflow.Controllers
         //
         // POST: /Account/Register
 
-        [AllowAnonymous]
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
@@ -84,11 +79,11 @@ namespace Specflow.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
+                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
+                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -104,6 +99,7 @@ namespace Specflow.Controllers
         //
         // GET: /Account/ChangePassword
 
+        [Authorize]
         public ActionResult ChangePassword()
         {
             return View();
@@ -112,6 +108,7 @@ namespace Specflow.Controllers
         //
         // POST: /Account/ChangePassword
 
+        [Authorize]
         [HttpPost]
         public ActionResult ChangePassword(ChangePasswordModel model)
         {
@@ -123,7 +120,7 @@ namespace Specflow.Controllers
                 bool changePasswordSucceeded;
                 try
                 {
-                    MembershipUser currentUser = Membership.GetUser(User.Identity.Name, userIsOnline: true);
+                    MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true /* userIsOnline */);
                     changePasswordSucceeded = currentUser.ChangePassword(model.OldPassword, model.NewPassword);
                 }
                 catch (Exception)
@@ -151,11 +148,6 @@ namespace Specflow.Controllers
         public ActionResult ChangePasswordSuccess()
         {
             return View();
-        }
-
-        private IEnumerable<string> GetErrorsFromModelState()
-        {
-            return ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
         }
 
         #region Status Codes

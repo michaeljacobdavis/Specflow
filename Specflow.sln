@@ -1,42 +1,53 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow", "Specflow\Specflow.csproj", "{CA8BFB52-5FB9-4F60-9B1F-AEE10CF22317}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow", "Specflow\Specflow.csproj", "{CD1E9E8D-0531-442F-AC22-CDF8A99E67B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow.Tests", "Specflow.Tests\Specflow.Tests.csproj", "{81D4A596-FD91-44DC-B7FA-A5396ACC3A9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow.Tests", "Specflow.Tests\Specflow.Tests.csproj", "{9344FFFD-D773-4D0A-9F4A-03069FB0E760}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9EB2BFB2-20BC-4637-A761-BCFB90961AB2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{64150120-4E28-4F37-BC4D-379E25C4C95E}"
 	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinchilla", "Chinchilla\Chinchilla.csproj", "{35C92772-0070-4A5C-8EB9-C7E49ADFD5E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinchilla", "Chinchilla\Chinchilla.csproj", "{ACFA195A-8D52-490F-9A59-36A2A54E106B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinchilla.Tests", "Chinchilla.Tests\Chinchilla.Tests.csproj", "{025233C2-3950-4E50-A57E-BB6759F82D64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinchilla.Tests", "Chinchilla.Tests\Chinchilla.Tests.csproj", "{EF17CF2E-9F57-4423-9C5E-408EECBCA47C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1FB61B34-280C-4EC5-9A27-563B0F64CD59}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Specflow.vsmdi = Specflow.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Specflow.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{025233C2-3950-4E50-A57E-BB6759F82D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{025233C2-3950-4E50-A57E-BB6759F82D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{025233C2-3950-4E50-A57E-BB6759F82D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{025233C2-3950-4E50-A57E-BB6759F82D64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35C92772-0070-4A5C-8EB9-C7E49ADFD5E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35C92772-0070-4A5C-8EB9-C7E49ADFD5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35C92772-0070-4A5C-8EB9-C7E49ADFD5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35C92772-0070-4A5C-8EB9-C7E49ADFD5E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{81D4A596-FD91-44DC-B7FA-A5396ACC3A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81D4A596-FD91-44DC-B7FA-A5396ACC3A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81D4A596-FD91-44DC-B7FA-A5396ACC3A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81D4A596-FD91-44DC-B7FA-A5396ACC3A9D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA8BFB52-5FB9-4F60-9B1F-AEE10CF22317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA8BFB52-5FB9-4F60-9B1F-AEE10CF22317}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA8BFB52-5FB9-4F60-9B1F-AEE10CF22317}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA8BFB52-5FB9-4F60-9B1F-AEE10CF22317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD1E9E8D-0531-442F-AC22-CDF8A99E67B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD1E9E8D-0531-442F-AC22-CDF8A99E67B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD1E9E8D-0531-442F-AC22-CDF8A99E67B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD1E9E8D-0531-442F-AC22-CDF8A99E67B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9344FFFD-D773-4D0A-9F4A-03069FB0E760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9344FFFD-D773-4D0A-9F4A-03069FB0E760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9344FFFD-D773-4D0A-9F4A-03069FB0E760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9344FFFD-D773-4D0A-9F4A-03069FB0E760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFA195A-8D52-490F-9A59-36A2A54E106B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFA195A-8D52-490F-9A59-36A2A54E106B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFA195A-8D52-490F-9A59-36A2A54E106B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFA195A-8D52-490F-9A59-36A2A54E106B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF17CF2E-9F57-4423-9C5E-408EECBCA47C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF17CF2E-9F57-4423-9C5E-408EECBCA47C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF17CF2E-9F57-4423-9C5E-408EECBCA47C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF17CF2E-9F57-4423-9C5E-408EECBCA47C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

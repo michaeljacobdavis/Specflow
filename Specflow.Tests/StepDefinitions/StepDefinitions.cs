@@ -10,7 +10,7 @@ namespace CLC.Web.UiTests.StepDefinitions
     [Binding]
     public class StepDefinitions : Chinchilla
     {
-        public StepDefinitions() :base(ConfigurationManager.AppSettings["RootUrl"]){}
+        public StepDefinitions() :base(WebBrowser.Current, ConfigurationManager.AppSettings["RootUrl"]){}
 
         #region Givens
 

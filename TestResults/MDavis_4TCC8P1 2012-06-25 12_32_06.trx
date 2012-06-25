@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="64d08ead-878c-4900-a334-9840f7e4a1c8" name="MDavis@4TCC8P1 2012-06-25 12:32:06" runUser="CLC_DOMAIN\MDavis" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="c81e61d7-eda7-4241-abac-4f7c050a0c4f">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="MDavis_4TCC8P1 2012-06-25 12_32_06">
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\packages\Selenium.Support.2.24.0\lib\net40\WebDriver.Support.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\Visual Studio 2010\Projects\Specflow\packages\Newtonsoft.Json.4.5.1\lib\net40\Newtonsoft.Json.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\packages\Newtonsoft.Json.4.5.1\lib\net40\Newtonsoft.Json.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\Visual Studio 2010\Projects\Specflow\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Chinchilla\bin\Debug\Chinchilla.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\Visual Studio 2010\Projects\Specflow\packages\DotNetZip.1.9.1.8\lib\net20\Ionic.Zip.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\Visual Studio 2010\Projects\Specflow\packages\Selenium.WebDriver.2.24.0\lib\net40\WebDriver.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow\bin\Specflow.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\packages\Selenium.WebDriver.2.24.0\lib\net40\WebDriver.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\Visual Studio 2010\Projects\Specflow\packages\Moq.4.0.10827\lib\NET40\Moq.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\packages\SpecFlow.1.8.1\lib\net35\TechTalk.SpecFlow.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\Visual Studio 2010\Projects\Specflow\packages\Selenium.Support.2.24.0\lib\net40\WebDriver.Support.dll" />
+      <DeploymentItem filename="C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\packages\DotNetZip.1.9.1.8\lib\net20\Ionic.Zip.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-06-25T12:32:06.1869663-07:00" queuing="2012-06-25T12:32:06.2493663-07:00" start="2012-06-25T12:32:06.2649663-07:00" finish="2012-06-25T12:32:06.7485663-07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="4" executed="4" passed="3" error="1" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="ClickLinkTextTest" storage="c:\users\mdavis\documents\visual studio 2010\projects\specflow\chinchilla.tests\bin\debug\chinchilla.tests.dll" id="75228d1f-71c8-c6ea-2c16-67ee9bad2367">
+      <Execution id="65a04b41-3cfc-44a5-96af-f1c182d39e62" />
+      <TestMethod codeBase="C:/Users/mdavis/Documents/Visual Studio 2010/Projects/Specflow/Chinchilla.Tests/bin/Debug/Chinchilla.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MJD.Tests.ChinchillaTest, Chinchilla.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ClickLinkTextTest" />
+    </UnitTest>
+    <UnitTest name="NewUserRegisters" storage="c:\users\mdavis\documents\visual studio 2010\projects\specflow\specflow.tests\bin\debug\specflow.tests.dll" id="3e7c6e15-675f-9ab3-bcb4-dce25822e358">
+      <Description>New User Registers</Description>
+      <Execution id="f83257ea-1f61-41af-8d1e-184e6b424571" />
+      <Properties>
+        <Property>
+          <Key>FeatureTitle</Key>
+          <Value>Addition</Value>
+        </Property>
+      </Properties>
+      <TestMethod codeBase="C:/Users/mdavis/Documents/visual studio 2010/Projects/Specflow/Specflow.Tests/bin/Debug/Specflow.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Specflow.Tests.Features.AdditionFeature, Specflow.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="NewUserRegisters" />
+    </UnitTest>
+    <UnitTest name="ClickLinkMultipleTest" storage="c:\users\mdavis\documents\visual studio 2010\projects\specflow\chinchilla.tests\bin\debug\chinchilla.tests.dll" id="22d78590-6f93-535f-927a-33217bb8dffa">
+      <Execution id="f5ec318e-55f7-4719-9834-53fb96c405a3" />
+      <TestMethod codeBase="C:/Users/mdavis/Documents/Visual Studio 2010/Projects/Specflow/Chinchilla.Tests/bin/Debug/Chinchilla.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MJD.Tests.ChinchillaTest, Chinchilla.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ClickLinkMultipleTest" />
+    </UnitTest>
+    <UnitTest name="ClickLinkNoneTest" storage="c:\users\mdavis\documents\visual studio 2010\projects\specflow\chinchilla.tests\bin\debug\chinchilla.tests.dll" id="7b80570c-6d2b-6e2a-2a63-b546101f8a23">
+      <Execution id="66236f89-f77e-4d44-b6f8-72cd83189fdb" />
+      <TestMethod codeBase="C:/Users/mdavis/Documents/Visual Studio 2010/Projects/Specflow/Chinchilla.Tests/bin/Debug/Chinchilla.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MJD.Tests.ChinchillaTest, Chinchilla.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="ClickLinkNoneTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="22d78590-6f93-535f-927a-33217bb8dffa" executionId="f5ec318e-55f7-4719-9834-53fb96c405a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3e7c6e15-675f-9ab3-bcb4-dce25822e358" executionId="f83257ea-1f61-41af-8d1e-184e6b424571" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75228d1f-71c8-c6ea-2c16-67ee9bad2367" executionId="65a04b41-3cfc-44a5-96af-f1c182d39e62" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b80570c-6d2b-6e2a-2a63-b546101f8a23" executionId="66236f89-f77e-4d44-b6f8-72cd83189fdb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="f5ec318e-55f7-4719-9834-53fb96c405a3" testId="22d78590-6f93-535f-927a-33217bb8dffa" testName="ClickLinkMultipleTest" computerName="4TCC8P1" duration="00:00:00.1889040" startTime="2012-06-25T12:32:06.2649663-07:00" endTime="2012-06-25T12:32:06.6237663-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f5ec318e-55f7-4719-9834-53fb96c405a3">
+    </UnitTestResult>
+    <UnitTestResult executionId="f83257ea-1f61-41af-8d1e-184e6b424571" testId="3e7c6e15-675f-9ab3-bcb4-dce25822e358" testName="NewUserRegisters" computerName="4TCC8P1" startTime="2012-06-25T12:32:06.6237663-07:00" endTime="2012-06-25T12:32:06.7329663-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f83257ea-1f61-41af-8d1e-184e6b424571">
+      <Output>
+        <ErrorInfo>
+          <Message>Unit Test Adapter threw exception: 
+The type initializer for 'Microsoft.VisualStudio.TestTools.Diagnostics.EqtTrace' threw an exception.
+Configuration system failed to initialize
+Only one &lt;configSections&gt; element allowed per config file and if present must be the first child of the root &lt;configuration&gt; element. (C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow.Tests\bin\Debug\Specflow.Tests.DLL.config line 6).</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="65a04b41-3cfc-44a5-96af-f1c182d39e62" testId="75228d1f-71c8-c6ea-2c16-67ee9bad2367" testName="ClickLinkTextTest" computerName="4TCC8P1" duration="00:00:00.0024477" startTime="2012-06-25T12:32:06.7329663-07:00" endTime="2012-06-25T12:32:06.7329663-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="65a04b41-3cfc-44a5-96af-f1c182d39e62">
+    </UnitTestResult>
+    <UnitTestResult executionId="66236f89-f77e-4d44-b6f8-72cd83189fdb" testId="7b80570c-6d2b-6e2a-2a63-b546101f8a23" testName="ClickLinkNoneTest" computerName="4TCC8P1" duration="00:00:00.0013289" startTime="2012-06-25T12:32:06.7329663-07:00" endTime="2012-06-25T12:32:06.7329663-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="66236f89-f77e-4d44-b6f8-72cd83189fdb">
+    </UnitTestResult>
+  </Results>
+</TestRun>
