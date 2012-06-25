@@ -1,28 +1,51 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="EF17CF2E-9F57-4423-9C5E-408EECBCA47C/f:ChinchillaTest.cs" caret="1620" fromTop="50" />
     <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/f:WebBrowser.cs" caret="690" fromTop="27" />
     <File id="CD1E9E8D-0531-442F-AC22-CDF8A99E67B0/f:Web.config" caret="468" fromTop="13" />
     <File id="CD1E9E8D-0531-442F-AC22-CDF8A99E67B0/d:Controllers/f:HomeController.cs" caret="248" fromTop="11" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:Features/f:Menu1.feature.cs" caret="0" fromTop="0" />
     <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/f:App.config" caret="554" fromTop="12" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:StepDefinitions/f:StepDefinitions.cs" caret="2363" fromTop="21" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:Features/f:Menu.feature" caret="202" fromTop="10" />
-    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="1575" fromTop="31" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Attributes/f:StringValue.cs" caret="342" fromTop="14" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:EnumExtensions.cs" caret="582" fromTop="19" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Selenium/f:FindBy.cs" caret="0" fromTop="0" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Field.cs" caret="0" fromTop="0" />
+    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:Features/f:Menu1.feature.cs" caret="78" fromTop="0" />
+    <File id="EF17CF2E-9F57-4423-9C5E-408EECBCA47C/f:ChinchillaTest.cs" caret="3310" fromTop="33" />
+    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:Features/f:Menu.feature" caret="553" fromTop="21" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebElementsExtensions.cs" caret="604" fromTop="22" />
+    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:StepDefinitions/f:StepDefinitions.cs" caret="1004" fromTop="25" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="791" fromTop="19" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="360" fromTop="4" />
   </RecentFiles>
   <RecentEdits>
-    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="3614" fromTop="23" />
-    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="511" fromTop="13" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:StepDefinitions/f:StepDefinitions.cs" caret="349" fromTop="12" />
-    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="5122" fromTop="21" />
-    <File id="EF17CF2E-9F57-4423-9C5E-408EECBCA47C/f:ChinchillaTest.cs" caret="228" fromTop="5" />
-    <File id="EF17CF2E-9F57-4423-9C5E-408EECBCA47C/f:ChinchillaTest.cs" caret="445" fromTop="17" />
-    <File id="EF17CF2E-9F57-4423-9C5E-408EECBCA47C/f:ChinchillaTest.cs" caret="890" fromTop="28" />
-    <File id="EF17CF2E-9F57-4423-9C5E-408EECBCA47C/f:ChinchillaTest.cs" caret="289" fromTop="13" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/f:App.config" caret="477" fromTop="7" />
-    <File id="EF17CF2E-9F57-4423-9C5E-408EECBCA47C/f:ChinchillaTest.cs" caret="2383" fromTop="30" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:Features/f:Menu.feature" caret="198" fromTop="8" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/f:App.config" caret="57" fromTop="2" />
-    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/f:App.config" caret="324" fromTop="7" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="2377" fromTop="31" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="3176" fromTop="48" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="2957" fromTop="43" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="4157" fromTop="37" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="3959" fromTop="29" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="5651" fromTop="30" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="6273" fromTop="42" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="5155" fromTop="10" />
+    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:Features/f:Menu.feature" caret="478" fromTop="18" />
+    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:StepDefinitions/f:StepDefinitions.cs" caret="1045" fromTop="27" />
+    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:StepDefinitions/f:StepDefinitions.cs" caret="1032" fromTop="26" />
+    <File id="9344FFFD-D773-4D0A-9F4A-03069FB0E760/d:Features/f:Menu.feature" caret="499" fromTop="18" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="5088" fromTop="8" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="5344" fromTop="25" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="683" fromTop="13" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="1228" fromTop="24" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="1259" fromTop="31" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="1259" fromTop="32" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="683" fromTop="7" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="776" fromTop="18" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="1228" fromTop="24" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="1261" fromTop="31" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="931" fromTop="24" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/d:Extensions/f:WebDriverExtensions.cs" caret="1369" fromTop="35" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="6842" fromTop="39" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="8851" fromTop="59" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="8851" fromTop="18" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="8851" fromTop="19" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="6880" fromTop="16" />
+    <File id="ACFA195A-8D52-490F-9A59-36A2A54E106B/f:Chinchilla.cs" caret="8732" fromTop="59" />
   </RecentEdits>
 </RecentFiles>
