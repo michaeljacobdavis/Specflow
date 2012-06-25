@@ -33,6 +33,12 @@ namespace CLC.Web.UiTests.StepDefinitions
             ClickLink(text:link);
         }
 
+        [When(@"(?:I)? check (.*)")]
+        public void WhenICheck(string checkbox)
+        {
+            Check(checkbox);
+        }
+
         [When(@"(?:I)? click on (?:the)? (.*) button")]
         public void WhenIClickOnButton(string button)
         {

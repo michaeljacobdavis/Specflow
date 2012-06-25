@@ -14,3 +14,19 @@ C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Chinchilla\bin\De
 C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Chinchilla\bin\Debug\WebDriver.Support.xml
 C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Chinchilla\obj\Debug\Chinchilla.dll
 C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Chinchilla\obj\Debug\Chinchilla.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Chinchilla.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Chinchilla.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Castle.Core.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Ionic.Zip.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\WebDriver.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\WebDriver.Support.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Castle.Core.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Ionic.Zip.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\WebDriver.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\bin\Debug\WebDriver.Support.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\obj\Debug\Chinchilla.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Chinchilla\obj\Debug\Chinchilla.pdb

@@ -81,6 +81,46 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("I\'m on /");
 #line 9
  testRunner.When("I click on the Log On link");
+#line 10
+ testRunner.And("I click on the Register link");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "User name",
+                        "John"});
+            table1.AddRow(new string[] {
+                        "Email address",
+                        "Galt"});
+            table1.AddRow(new string[] {
+                        "Password",
+                        "54"});
+            table1.AddRow(new string[] {
+                        "Confirm password",
+                        "54"});
+#line 11
+ testRunner.And("I fill in the following:", ((string)(null)), table1);
+#line 17
+ testRunner.Then("I should see \"The Password must be at least 6 characters long.\"");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Remember me")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Addition")]
+        public virtual void RememberMe()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remember me", ((string[])(null)));
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given("I\'m on /");
+#line 21
+ testRunner.When("I click on the Log On link");
+#line 22
+ testRunner.And("I check Remember me?");
 #line hidden
             this.ScenarioCleanup();
         }

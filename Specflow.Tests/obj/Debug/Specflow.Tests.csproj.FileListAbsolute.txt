@@ -20,3 +20,25 @@ C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow.Tests\bi
 C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow.Tests\bin\Debug\WebDriver.Support.xml
 C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow.Tests\obj\Debug\Specflow.Tests.dll
 C:\Users\mdavis\Documents\visual studio 2010\Projects\Specflow\Specflow.Tests\obj\Debug\Specflow.Tests.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Specflow.Tests.dll.config
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Specflow.Tests.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Specflow.Tests.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Castle.Core.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Chinchilla.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Ionic.Zip.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Specflow.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\TechTalk.SpecFlow.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\WebDriver.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\WebDriver.Support.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Chinchilla.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Specflow.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Castle.Core.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Ionic.Zip.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\WebDriver.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\bin\Debug\WebDriver.Support.xml
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\obj\Debug\Specflow.Tests.dll
+C:\Users\mdavis\Documents\GitHub\Specflow\Specflow.Tests\obj\Debug\Specflow.Tests.pdb

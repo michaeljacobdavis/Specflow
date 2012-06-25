@@ -12,6 +12,9 @@ namespace MJD
 {
     public class Chinchilla
     {
+
+        private int timeout = 100;
+
         private Uri _rootUrl;
 
         private IWebDriver _browser;
@@ -38,12 +41,12 @@ namespace MJD
 
             if(id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("a#{0}", id)))).ToList();
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("a#{0}", id)), timeout)).ToList();
             }
 
             if (text != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector("a")).Where(el => el.Text == text)).ToList();
+                results = results.Union(_browser.FindElements(By.CssSelector("a"), timeout).Where(el => el.Text == text)).ToList();
             }
 
             if(results.Count > 1)
@@ -53,8 +56,8 @@ namespace MJD
             if (results.Count == 0)
             {
                 throw new NoElementsFoundException();
-            } 
-            results.First().Click();
+            }
+            results.Validate().First().Click();
         }
 
         public void ClickButton(string locator)
@@ -67,49 +70,174 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)))).ToList();
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)), timeout)).ToList();
             }
 
             if (text != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector("button, input[type='submit'], input[type='button']")).Where(el => el.Text == text)).ToList();
+                results = results.Union(_browser.FindElements(By.CssSelector("button, input[type='submit'], input[type='button']"), timeout).Where(el => el.Text == text)).ToList();
             }
+            results.Validate().First().Click();
+        }
 
-            if (results.Count > 1)
+        public void ClickOn(string locator)
+        {
+            ClickOn(locator, locator);
+        }
+        public void ClickOn(string text = null, string id = null)
+        {
+            var results = new List<IWebElement>();
+
+            if (id != null)
             {
-                throw new MoreThanOneElementFoundException();
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("a#{0}, button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)), timeout)).ToList();
             }
-            results.First().Click();
+
+            if (text != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector("a, button, input[type='submit'], input[type='button']"), timeout).Where(el => el.Text == text)).ToList();
+            }
+
+            results.Validate().First().Click();
         }
 
-        public void ClickOn()
+
+        public void FillIn(string value, string locator)
         {
-            throw new NotImplementedException();
+            FillIn(value, locator, locator, locator);
         }
-
-        public void FillIn()
+        public void FillIn(string value, string labelText = null, string id = null, string name = null)
         {
+            var results = new List<IWebElement>();
 
-            throw new NotImplementedException();
+            if (id != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input#{0}", id)), timeout)).ToList();
+            }
+
+            if (name != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[name='{0}']", name)), timeout)).ToList();
+            }
+
+            if (labelText != null)
+            {
+                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                results = results.Union(
+                    from label 
+                    in matchingLabels 
+                    select label.GetAttribute("for") 
+                    into inputId where inputId != null 
+                    select _browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId))))).ToList();
+
+                //foreach (var label in matchingLabels)
+                //{
+                //    var inputId = label.GetAttribute("for");
+                //    if (inputId != null)
+                //    {
+                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
+                //    }
+
+                //}
+            }
+            results.Validate().First().SendKeys(value);
         }
 
-        public void FillIn(string value, string labelText)
+        public void Check(string locator)
         {
-            throw new NotImplementedException();
+            Check(locator, locator, locator);
+        }
+        public void Check(string labelText = null, string id = null, string name = null)
+        {
+            var results = new List<IWebElement>();
+
+            if (id != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type=checkbox]#{0}", id)), timeout)).ToList();
+            }
+
+            if (name != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type='checkbox'][name='{0}']", name)), timeout)).ToList();
+            }
+
+            if (labelText != null)
+            {
+                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                results = results.Union(
+                    from label
+                    in matchingLabels
+                    select label.GetAttribute("for")
+                        into inputId
+                        where inputId != null
+                        select _browser.FindElement(By.CssSelector((string.Format("input[type='checkbox']#{0}", inputId))))).ToList();
+
+                //foreach (var label in matchingLabels)
+                //{
+                //    var inputId = label.GetAttribute("for");
+                //    if (inputId != null)
+                //    {
+                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
+                //    }
+
+                //}
+            }
+            var element = results.Validate().First();
+            if (!element.Selected)
+            {
+                element.Click();
+            }
         }
 
-        public void Check(string text)
+        public void UnCheck(string locator)
         {
-            throw new NotImplementedException();
+            UnCheck(locator, locator, locator);
         }
+        public void UnCheck(string labelText = null, string id = null, string name = null)
+        {
+            var results = new List<IWebElement>();
+
+            if (id != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type=checkbox]#{0}", id)), timeout)).ToList();
+            }
+
+            if (name != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type='checkbox'][name='{0}']", name)), timeout)).ToList();
+            }
+
+            if (labelText != null)
+            {
+                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                results = results.Union(
+                    from label
+                    in matchingLabels
+                    select label.GetAttribute("for")
+                        into inputId
+                        where inputId != null
+                        select _browser.FindElement(By.CssSelector((string.Format("input[type='checkbox']#{0}", inputId))))).ToList();
+
+                //foreach (var label in matchingLabels)
+                //{
+                //    var inputId = label.GetAttribute("for");
+                //    if (inputId != null)
+                //    {
+                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
+                //    }
+
+                //}
+            }
+            var element = results.Validate().First();
+            if (element.Selected)
+            {
+                element.Click();
+            }
+        }
+
+
 
         public void Choose(string text)
-        {
-            throw new NotImplementedException();
-
-        }
-
-        public void Uncheck(string text)
         {
             throw new NotImplementedException();
 
@@ -125,7 +253,6 @@ namespace MJD
         {
             throw new NotImplementedException();
         }
-
 
         public void Visit(string relativeUrl)
         {

@@ -3,4 +3,5 @@
   <Module PersistentId="CD1E9E8D-0531-442F-AC22-CDF8A99E67B0" ModuleId="Specflow" />
   <Module PersistentId="9344FFFD-D773-4D0A-9F4A-03069FB0E760" ModuleId="Specflow.Tests" />
   <Module PersistentId="EF17CF2E-9F57-4423-9C5E-408EECBCA47C" ModuleId="Chinchilla.Tests" />
+  <Module PersistentId="WebDriver, Version=2.24.0.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f" ModuleId="WebDriver" />
 </Modules>
