@@ -4,9 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Chinchilla.Attributes;
+using MJD.Attributes;
 
-namespace Chinchilla.Extensions
+namespace MJD.Extensions
 {
     public static class EnumExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Chinchilla.Selenium
+namespace MJD.Selenium
 {
     public class FindBy : By
     {
@@ -12,11 +12,6 @@ namespace Chinchilla.Selenium
         public static By Text(string text)
         {
             return By.XPath(string.Format("//*[text()='{0}']", text));
-        }
-
-        public static By ButtonText(string text)
-        {
-            return By.XPath(string.Format("//input[@value='{0}' and @type='submit']", text));
         }
     }
 }

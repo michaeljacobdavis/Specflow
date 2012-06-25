@@ -78,31 +78,9 @@ namespace Specflow.Tests.Features
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I\'m on /Account/Register");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "Value"});
-            table1.AddRow(new string[] {
-                        "User name",
-                        "Analysis Patterns"});
-            table1.AddRow(new string[] {
-                        "Email address",
-                        "Bridging the Communication Gap"});
-            table1.AddRow(new string[] {
-                        "Password",
-                        "Analysis Patterns"});
-            table1.AddRow(new string[] {
-                        "Confirm password",
-                        "Bridging the Communication Gap"});
+ testRunner.Given("I\'m on /");
 #line 9
- testRunner.When("I fill in the following:", ((string)(null)), table1);
-#line 15
- testRunner.And("I select Blah from Test");
-#line 16
- testRunner.And("I click on the Register button");
-#line 17
- testRunner.Then("I should see \"The password and confirmation password do not match.\"");
+ testRunner.When("I click on the Register link");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using Chinchilla.Extensions;
-using Chinchilla.Selenium;
+using MJD.Extensions;
+using MJD.Selenium;
+using MJD.Exceptions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace Chinchilla
+namespace MJD
 {
     public class Chinchilla
     {
@@ -17,7 +20,7 @@ namespace Chinchilla
         private Page _page;
         public Page Page { get { return _page; } }
 
-        public Chinchilla(string rootUrl) : this (WebBrowser.Current, rootUrl){}
+        public Chinchilla(string rootUrl) : this(WebBrowser.Current, rootUrl) { }
 
         public Chinchilla(IWebDriver browser, string rootUrl)
         {
@@ -27,37 +30,74 @@ namespace Chinchilla
         }
 
 
-        public void ClickLink(string selector = null, SelectorType type = SelectorType.Css, string text = null)
+        public void ClickLink(string locator)
         {
-            selector = selector ?? ElementType.Button.GetStringValue();
-            new Query(_browser, selector, SelectorType.XPath, text: text).Results.First().Click();
+            ClickLink(locator, locator);
         }
-
-        public void ClickButton(string selector = null, SelectorType type = SelectorType.Css, string text = null)
+        public void ClickLink(string text = null, string id = null)
         {
-            selector = String.Format("{0}[@value={1}]", selector ?? ElementType.Button.GetStringValue(), text);
-            new Query(_browser, selector, SelectorType.XPath).Results.First().Click();
-        }
+            var results = new List<IWebElement>();
 
-        public void ClickOn(string selector = null, SelectorType type = SelectorType.Css, string text = null)
-        {
-            selector = selector ?? ElementType.LinkOrButton.GetStringValue();
-            new Query(_browser, selector, SelectorType.XPath, text: text).Results.First().Click();
-        }
-
-        public void FillIn(string value, string selector = null, SelectorType type = SelectorType.Css, string labelText = null)
-        {
-            IWebElement element;
-            if(selector == null)
+            if(id != null)
             {
-                var label = new Query(_browser, ElementType.Label, SelectorType.XPath, text: labelText).Results.First();
-                element = _browser.FindElement(By.Id(label.GetAttribute("for")));
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("a#{0}", id)))).ToList();
             }
-            else
+
+            if (text != null)
             {
-                element = new Query(_browser, selector, SelectorType.XPath).Results.First();
+                results = results.Union(_browser.FindElements(By.CssSelector("a")).Where(el => el.Text == text)).ToList();
             }
-            element.SendKeys(value);
+
+            if(results.Count > 1)
+            {
+                throw new MoreThanOneElementFoundException();
+            }
+            if (results.Count == 0)
+            {
+                throw new NoElementsFoundException();
+            } 
+            results.First().Click();
+        }
+
+        public void ClickButton(string locator)
+        {
+            ClickButton(locator, locator);
+        }
+        public void ClickButton(string text = null, string id = null)
+        {
+            var results = new List<IWebElement>();
+
+            if (id != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)))).ToList();
+            }
+
+            if (text != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector("button, input[type='submit'], input[type='button']")).Where(el => el.Text == text)).ToList();
+            }
+
+            if (results.Count > 1)
+            {
+                throw new MoreThanOneElementFoundException();
+            }
+            results.First().Click();
+        }
+
+        public void ClickOn()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void FillIn()
+        {
+
+            throw new NotImplementedException();
+        }
+
+        public void FillIn(string value, string labelText)
+        {
+            throw new NotImplementedException();
         }
 
         public void Check(string text)
@@ -85,7 +125,7 @@ namespace Chinchilla
 
         public void Select(string field, string option)
         {
-            new SelectElement(new Query(_browser, ElementType.Select).Results.First()).SelectByText(option);
+            throw new NotImplementedException();
         }
 
 

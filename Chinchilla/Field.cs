@@ -1,4 +1,4 @@
-﻿namespace Chinchilla
+﻿namespace MJD
 {
     public class Field
     {

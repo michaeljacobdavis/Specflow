@@ -1,5 +1,5 @@
 ﻿using System.Configuration;
-using Chinchilla;
+using MJD;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using TechTalk.SpecFlow;
@@ -8,7 +8,7 @@ using TechTalk.SpecFlow.Assist;
 namespace CLC.Web.UiTests.StepDefinitions
 {
     [Binding]
-    public class StepDefinitions : Chinchilla.Chinchilla
+    public class StepDefinitions : Chinchilla
     {
         public StepDefinitions() :base(ConfigurationManager.AppSettings["RootUrl"]){}
 
@@ -30,13 +30,13 @@ namespace CLC.Web.UiTests.StepDefinitions
         [When(@"(?:I)? click on (?:the)? (.*) link")]
         public void WhenIClickOnLink(string link)
         {
-            ClickLink(text: link);
+            ClickLink(text:link);
         }
 
         [When(@"(?:I)? click on (?:the)? (.*) button")]
         public void WhenIClickOnButton(string button)
         {
-            ClickButton(text : button);
+
         }
 
         [When(@"(?:I)? fill in (?:the)? (.*) field with ""(.*)""")]

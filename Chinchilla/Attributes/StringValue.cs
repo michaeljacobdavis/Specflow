@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chinchilla.Attributes
+namespace MJD.Attributes
 {
     /// <summary>
     /// This attribute is used to represent a string value

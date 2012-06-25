@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Firefox;
 using TechTalk.SpecFlow;
 
-namespace Chinchilla
+namespace MJD
 {
     [Binding]
     public class WebBrowser
