@@ -42,7 +42,11 @@ namespace CLC.Web.UiTests.StepDefinitions
         [When(@"(?:I)? click on (?:the)? (.*) button")]
         public void WhenIClickOnButton(string button)
         {
-
+            Within("RegisterForm", () =>
+                {
+                    ClickButton(button);
+                }
+            );
         }
 
         [When(@"(?:I)? fill in (?:the)? (.*) field with ""(.*)""")]

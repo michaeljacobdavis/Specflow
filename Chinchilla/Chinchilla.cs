@@ -20,6 +20,8 @@ namespace MJD
         private IWebDriver _browser;
         public IWebDriver Browser { get { return _browser; } }
 
+        protected ISearchContext SearchContext { get; set; }
+
         private Page _page;
         public Page Page { get { return _page; } }
 
@@ -28,6 +30,7 @@ namespace MJD
             _browser = browser;
             _rootUrl = new Uri(rootUrl);
             _page = new Page(_browser);
+            SearchContext = browser;
         }
 
 
@@ -50,12 +53,12 @@ namespace MJD
 
             if(id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("a#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("a#{0}", id)))).ToList();
             }
 
             if (text != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector("a"), timeout).Where(el => el.Text == text)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector("a")).Where(el => el.Text == text)).ToList();
             }
 
             if(results.Count > 1)
@@ -79,12 +82,12 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)))).ToList();
             }
 
             if (text != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector("button, input[type='submit'], input[type='button']"), timeout).Where(el => el.Text == text)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector("button, input[type='submit'], input[type='button']")).Where(el => el.Text == text)).ToList();
             }
             results.Validate().First().Click();
         }
@@ -99,12 +102,12 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("a#{0}, button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("a#{0}, button#{0}, input[type='submit']#{0}, input[type='button']#{0}", id)))).ToList();
             }
 
             if (text != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector("a, button, input[type='submit'], input[type='button']"), timeout).Where(el => el.Text == text)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector("a, button, input[type='submit'], input[type='button']")).Where(el => el.Text == text)).ToList();
             }
 
             results.Validate().First().Click();
@@ -120,17 +123,17 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input#{0}", id)))).ToList();
             }
 
             if (name != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[name='{0}']", name)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input[name='{0}']", name)))).ToList();
             }
 
             if (labelText != null)
             {
-                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                var matchingLabels = results.Union(SearchContext.FindElements(By.CssSelector("label")).Where(el => el.Text == labelText)).ToList();
                 results = results.Union(
                     from label 
                     in matchingLabels 
@@ -161,17 +164,17 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type=checkbox]#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input[type=checkbox]#{0}", id)))).ToList();
             }
 
             if (name != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type='checkbox'][name='{0}']", name)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input[type='checkbox'][name='{0}']", name)))).ToList();
             }
 
             if (labelText != null)
             {
-                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                var matchingLabels = results.Union(SearchContext.FindElements(By.CssSelector("label")).Where(el => el.Text == labelText)).ToList();
                 results = results.Union(
                     from label
                     in matchingLabels
@@ -179,16 +182,6 @@ namespace MJD
                         into inputId
                         where inputId != null
                         select _browser.FindElement(By.CssSelector((string.Format("input[type='checkbox']#{0}", inputId))))).ToList();
-
-                //foreach (var label in matchingLabels)
-                //{
-                //    var inputId = label.GetAttribute("for");
-                //    if (inputId != null)
-                //    {
-                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
-                //    }
-
-                //}
             }
             var element = results.Validate().First();
             if (!element.Selected)
@@ -207,17 +200,17 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type=checkbox]#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input[type=checkbox]#{0}", id)))).ToList();
             }
 
             if (name != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type='checkbox'][name='{0}']", name)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input[type='checkbox'][name='{0}']", name)))).ToList();
             }
 
             if (labelText != null)
             {
-                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                var matchingLabels = results.Union(SearchContext.FindElements(By.CssSelector("label")).Where(el => el.Text == labelText)).ToList();
                 results = results.Union(
                     from label
                     in matchingLabels
@@ -226,15 +219,6 @@ namespace MJD
                         where inputId != null
                         select _browser.FindElement(By.CssSelector((string.Format("input[type='checkbox']#{0}", inputId))))).ToList();
 
-                //foreach (var label in matchingLabels)
-                //{
-                //    var inputId = label.GetAttribute("for");
-                //    if (inputId != null)
-                //    {
-                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
-                //    }
-
-                //}
             }
             var element = results.Validate().First();
             if (element.Selected)
@@ -253,33 +237,23 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type=radio]#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input[type=radio]#{0}", id)))).ToList();
             }
 
             if (name != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type='radio'][name='{0}']", name)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("input[type='radio'][name='{0}']", name)))).ToList();
             }
 
             if (labelText != null)
             {
-                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                var matchingLabels = results.Union(SearchContext.FindElements(By.CssSelector("label")).Where(el => el.Text == labelText)).ToList();
                 results = results.Union(
                     from label in matchingLabels
                     select label.GetAttribute("for")
                         into inputId
                         where inputId != null
                         select _browser.FindElement(By.CssSelector((string.Format("input[type='radio']#{0}", inputId))))).ToList();
-
-                //foreach (var label in matchingLabels)
-                //{
-                //    var inputId = label.GetAttribute("for");
-                //    if (inputId != null)
-                //    {
-                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
-                //    }
-
-                //}
             }
             var element = results.Validate().First();
             element.Click();
@@ -295,17 +269,17 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("select#{0}", id)))).ToList();
             }
 
             if (name != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select[name='{0}']", name)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("select[name='{0}']", name)))).ToList();
             }
 
             if (labelText != null)
             {
-                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                var matchingLabels = results.Union(SearchContext.FindElements(By.CssSelector("label")).Where(el => el.Text == labelText)).ToList();
                 results = results.Union(
                     from label
                     in matchingLabels
@@ -313,16 +287,6 @@ namespace MJD
                         into inputId
                         where inputId != null
                         select _browser.FindElement(By.CssSelector((string.Format("select#{0}", inputId))))).ToList();
-
-                //foreach (var label in matchingLabels)
-                //{
-                //    var inputId = label.GetAttribute("for");
-                //    if (inputId != null)
-                //    {
-                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
-                //    }
-
-                //}
             }
 
             new SelectElement(results.Validate().First()).SelectByText(value);
@@ -338,17 +302,17 @@ namespace MJD
 
             if (id != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select#{0}", id)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("select#{0}", id)))).ToList();
             }
 
             if (name != null)
             {
-                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select[name='{0}']", name)), timeout)).ToList();
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("select[name='{0}']", name)))).ToList();
             }
 
             if (labelText != null)
             {
-                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                var matchingLabels = results.Union(SearchContext.FindElements(By.CssSelector("label")).Where(el => el.Text == labelText)).ToList();
                 results = results.Union(
                     from label
                     in matchingLabels
@@ -356,16 +320,6 @@ namespace MJD
                         into inputId
                         where inputId != null
                         select _browser.FindElement(By.CssSelector((string.Format("select#{0}", inputId))))).ToList();
-
-                //foreach (var label in matchingLabels)
-                //{
-                //    var inputId = label.GetAttribute("for");
-                //    if (inputId != null)
-                //    {
-                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
-                //    }
-
-                //}
             }
 
             new SelectElement(results.Validate().First()).DeselectByText(value);
@@ -375,6 +329,20 @@ namespace MJD
         {
             var absoluteUrl = new Uri(_rootUrl, relativeUrl);
             _browser.Navigate().GoToUrl(absoluteUrl);
+        }
+
+        public void Within(string id, Action action)
+        {
+            var originalSearchContext = SearchContext;
+            var results = new List<IWebElement>();
+            if (id != null)
+            {
+                results = results.Union(SearchContext.FindElements(By.CssSelector(string.Format("#{0}", id)))).ToList();
+            }
+            SearchContext = results.Validate().First();
+            action();
+            SearchContext = originalSearchContext;
+
         }
 
         public string CurrentPath

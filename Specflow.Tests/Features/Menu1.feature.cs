@@ -106,7 +106,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 18
  testRunner.And("I select blah from fdasfds");
 #line 19
- testRunner.And("I attach \"c:/blah.txt\" to upload");
+ testRunner.And("I click on the Register button");
 #line 20
  testRunner.Then("I should see \"The Password must be at least 6 characters long.\"");
 #line hidden

@@ -16,7 +16,7 @@ Scenario: New User Registers
 		| Confirm password  | 54    |
 	And I choose Hello
 	And I select blah from fdasfds
-	And I attach "c:/blah.txt" to upload
+	And I click on the Register button
 	Then I should see "The Password must be at least 6 characters long."
 
 Scenario: Remember me
