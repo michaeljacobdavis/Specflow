@@ -54,7 +54,19 @@ namespace CLC.Web.UiTests.StepDefinitions
         [When(@"(?:I)? select (.*) from (.*)")]
         public void WhenISelectFrom(string option, string field)
         {
-            Select(field, option);
+            Select(option, field);
+        }
+
+        [When(@"(?:I)? attach (.*) to (.*)")]
+        public void WhenIAttach(string path, string field)
+        {
+            AttachFile(path, field);
+        }
+
+        [When(@"(?:I)? choose (.*)")]
+        public void WhenIChoose(string text)
+        {
+            Choose(text);
         }
 
         [When(@"(?:I)? fill in the following:")]

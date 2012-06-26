@@ -102,6 +102,12 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.And("I fill in the following:", ((string)(null)), table1);
 #line 17
+ testRunner.And("I choose Hello");
+#line 18
+ testRunner.And("I select blah from fdasfds");
+#line 19
+ testRunner.And("I attach \"c:/blah.txt\" to upload");
+#line 20
  testRunner.Then("I should see \"The Password must be at least 6 characters long.\"");
 #line hidden
             this.ScenarioCleanup();
@@ -113,13 +119,13 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void RememberMe()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Remember me", ((string[])(null)));
-#line 19
-this.ScenarioSetup(scenarioInfo);
-#line 20
- testRunner.Given("I\'m on /");
-#line 21
- testRunner.When("I click on the Log On link");
 #line 22
+this.ScenarioSetup(scenarioInfo);
+#line 23
+ testRunner.Given("I\'m on /");
+#line 24
+ testRunner.When("I click on the Log On link");
+#line 25
  testRunner.And("I check Remember me?");
 #line hidden
             this.ScenarioCleanup();

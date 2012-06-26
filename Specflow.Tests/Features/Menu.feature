@@ -14,6 +14,9 @@ Scenario: New User Registers
 		| Email address		| Galt  |
 		| Password			| 54    |
 		| Confirm password  | 54    |
+	And I choose Hello
+	And I select blah from fdasfds
+	And I attach "c:/blah.txt" to upload
 	Then I should see "The Password must be at least 6 characters long."
 
 Scenario: Remember me

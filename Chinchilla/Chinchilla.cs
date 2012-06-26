@@ -13,7 +13,7 @@ namespace MJD
     public class Chinchilla
     {
 
-        private int timeout = 100;
+        private int timeout = 1000;
 
         private Uri _rootUrl;
 
@@ -30,6 +30,15 @@ namespace MJD
             _page = new Page(_browser);
         }
 
+
+        public void AttachFile(string value, string locator)
+        {
+            AttachFile(value, locator, locator, locator);
+        }
+        public void AttachFile(string value, string labelText = null, string id = null, string name = null)
+        {
+            throw new NotImplementedException();
+        }
 
         public void ClickLink(string locator)
         {
@@ -100,7 +109,6 @@ namespace MJD
 
             results.Validate().First().Click();
         }
-
 
         public void FillIn(string value, string locator)
         {
@@ -235,23 +243,132 @@ namespace MJD
             }
         }
 
-
-
-        public void Choose(string text)
+        public void Choose(string locator)
         {
-            throw new NotImplementedException();
+            Choose(locator, locator, locator);
+        }
+        public void Choose(string labelText = null, string id = null, string name = null)
+        {
+            var results = new List<IWebElement>();
 
+            if (id != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type=radio]#{0}", id)), timeout)).ToList();
+            }
+
+            if (name != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("input[type='radio'][name='{0}']", name)), timeout)).ToList();
+            }
+
+            if (labelText != null)
+            {
+                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                results = results.Union(
+                    from label in matchingLabels
+                    select label.GetAttribute("for")
+                        into inputId
+                        where inputId != null
+                        select _browser.FindElement(By.CssSelector((string.Format("input[type='radio']#{0}", inputId))))).ToList();
+
+                //foreach (var label in matchingLabels)
+                //{
+                //    var inputId = label.GetAttribute("for");
+                //    if (inputId != null)
+                //    {
+                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
+                //    }
+
+                //}
+            }
+            var element = results.Validate().First();
+            element.Click();
         }
 
-        public void AttachFile(string text)
+        public void Select(string value, string locator)
         {
-            throw new NotImplementedException();
+            Select(value, locator, locator, locator);
+        }
+        public void Select(string value, string labelText = null, string id = null, string name = null)
+        {
+            var results = new List<IWebElement>();
 
+            if (id != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select#{0}", id)), timeout)).ToList();
+            }
+
+            if (name != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select[name='{0}']", name)), timeout)).ToList();
+            }
+
+            if (labelText != null)
+            {
+                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                results = results.Union(
+                    from label
+                    in matchingLabels
+                    select label.GetAttribute("for")
+                        into inputId
+                        where inputId != null
+                        select _browser.FindElement(By.CssSelector((string.Format("select#{0}", inputId))))).ToList();
+
+                //foreach (var label in matchingLabels)
+                //{
+                //    var inputId = label.GetAttribute("for");
+                //    if (inputId != null)
+                //    {
+                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
+                //    }
+
+                //}
+            }
+
+            new SelectElement(results.Validate().First()).SelectByText(value);
         }
 
-        public void Select(string field, string option)
+        public void UnSelect(string value, string locator)
         {
-            throw new NotImplementedException();
+            UnSelect(value, locator, locator, locator);
+        }
+        public void UnSelect(string value, string labelText = null, string id = null, string name = null)
+        {
+            var results = new List<IWebElement>();
+
+            if (id != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select#{0}", id)), timeout)).ToList();
+            }
+
+            if (name != null)
+            {
+                results = results.Union(_browser.FindElements(By.CssSelector(string.Format("select[name='{0}']", name)), timeout)).ToList();
+            }
+
+            if (labelText != null)
+            {
+                var matchingLabels = results.Union(_browser.FindElements(By.CssSelector("label"), timeout).Where(el => el.Text == labelText)).ToList();
+                results = results.Union(
+                    from label
+                    in matchingLabels
+                    select label.GetAttribute("for")
+                        into inputId
+                        where inputId != null
+                        select _browser.FindElement(By.CssSelector((string.Format("select#{0}", inputId))))).ToList();
+
+                //foreach (var label in matchingLabels)
+                //{
+                //    var inputId = label.GetAttribute("for");
+                //    if (inputId != null)
+                //    {
+                //        matchingInputs.Add(_browser.FindElement(By.CssSelector((string.Format("input#{0}", inputId)))));
+                //    }
+
+                //}
+            }
+
+            new SelectElement(results.Validate().First()).DeselectByText(value);
         }
 
         public void Visit(string relativeUrl)
