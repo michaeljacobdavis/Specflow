@@ -10,7 +10,7 @@ namespace CLC.Web.UiTests.StepDefinitions
     [Binding]
     public class StepDefinitions : Chinchilla
     {
-        public StepDefinitions() :base(WebBrowser.Current, ConfigurationManager.AppSettings["RootUrl"]){}
+        public StepDefinitions() : base(WebBrowser.Current, ConfigurationManager.AppSettings["RootUrl"]) { }
 
         #region Givens
 
@@ -30,7 +30,7 @@ namespace CLC.Web.UiTests.StepDefinitions
         [When(@"(?:I)? click on (?:the)? (.*) link")]
         public void WhenIClickOnLink(string link)
         {
-            ClickLink(text:link);
+            ClickLink(text: link);
         }
 
         [When(@"(?:I)? check (.*)")]
@@ -42,11 +42,7 @@ namespace CLC.Web.UiTests.StepDefinitions
         [When(@"(?:I)? click on (?:the)? (.*) button")]
         public void WhenIClickOnButton(string button)
         {
-            Within("RegisterForm", () =>
-                {
-                    ClickButton(button);
-                }
-            );
+            ClickButton(button);
         }
 
         [When(@"(?:I)? fill in (?:the)? (.*) field with ""(.*)""")]
@@ -77,10 +73,14 @@ namespace CLC.Web.UiTests.StepDefinitions
         public void WhenIFillInTheFollowingFields(Table table)
         {
             var fields = table.CreateSet<Field>();
-            foreach(var field in fields)
+            Within("RegisterForm", () =>
             {
-                FillIn(field.Value, labelText: field.Name);
-            }
+                foreach (var field in fields)
+                {
+                    FillIn(field.Value, labelText: field.Name);
+                }
+            });
+
         }
         #endregion
 
